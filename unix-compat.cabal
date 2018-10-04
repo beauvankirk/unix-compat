@@ -46,18 +46,10 @@ Library
     extra-libraries: msvcrt
     build-depends: Win32 >= 2.5.0.0
 
-    if flag(old-time)
-      build-depends: old-time >= 1.0.0.0 && < 1.2.0.0
-      cpp-options: -DOLD_TIME
-
-      if impl(ghc < 7)
-        build-depends: directory == 1.0.*
-        cpp-options: -DDIRECTORY_1_0
-      else
-        build-depends: directory == 1.1.*
-    else
-      build-depends: time >= 1.0 && < 1.9
-      build-depends: directory >= 1.2 && < 1.4
+    
+    
+    build-depends: time >= 1.0 && < 1.10
+    build-depends: directory >= 1.2 && < 1.4
 
     other-modules:
       System.PosixCompat.Internal.Time
